@@ -1,4 +1,4 @@
-package com.auth0.springboot20;
+package com.auth0.springboot;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

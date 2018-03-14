@@ -10,5 +10,22 @@
 </head>
 <body>
   <app-root></app-root>
+  <script type="text/javascript">
+    (() => {
+      const socket = new WebSocket("ws://localhost:8080/echo");
+
+      socket.onopen = () => {
+        console.log('connected!!!!');
+
+        socket.onmessage = function (e) {
+          console.log(e.data);
+        };
+
+        setTimeout(() => {
+          socket.send('hi, my name is bruno');
+        }, 10000);
+      }
+    })();
+  </script>
 </body>
 </html>
