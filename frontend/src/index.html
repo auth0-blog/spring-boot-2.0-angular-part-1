@@ -21,9 +21,10 @@
           console.log(e.data);
         };
 
-        setTimeout(() => {
+        setInterval(() => {
+          console.log('sending');
           socket.send('hi, my name is bruno');
-        }, 10000);
+        }, 5000);
       }
     })();
   </script>
