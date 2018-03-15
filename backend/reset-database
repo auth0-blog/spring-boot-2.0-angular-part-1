@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+docker stop collaborative-diagrams
+
+docker rm collaborative-diagrams
+
+docker run --name collaborative-diagrams -p 27017:27017 -d mongo
