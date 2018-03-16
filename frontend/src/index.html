@@ -7,6 +7,32 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    const pusher = new Pusher('e56ab111175a6b989239', {
+      cluster: 'us2',
+      encrypted: true,
+      authEndpoint: 'http://localhost:8080/auth',
+      authorizer: (channel) => ({
+        authorize: (socketId) => {
+          axios.post('http://localhost:8080/auth', {
+            socketId: socketId,
+            channel: channel.name
+          }).then(console.log).catch(console.log);
+        }
+      })
+    });
+
+    const channel = pusher.subscribe('private-collaborative-diagrams');
+    channel.bind('message', (data) => {
+      alert(data.message);
+    });
+  </script>
 </head>
 <body>
   <app-root></app-root>
