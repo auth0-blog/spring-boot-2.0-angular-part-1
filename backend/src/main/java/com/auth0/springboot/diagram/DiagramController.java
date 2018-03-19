@@ -1,4 +1,4 @@
-package com.auth0.springboot;
+package com.auth0.springboot.diagram;
 
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;

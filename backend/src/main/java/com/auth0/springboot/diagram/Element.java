@@ -1,4 +1,4 @@
-package com.auth0.springboot;
+package com.auth0.springboot.diagram;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

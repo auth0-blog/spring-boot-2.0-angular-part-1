@@ -1,4 +1,4 @@
-package com.auth0.springboot;
+package com.auth0.springboot.pusher;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

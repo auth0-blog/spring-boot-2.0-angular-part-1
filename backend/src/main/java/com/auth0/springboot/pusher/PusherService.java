@@ -1,4 +1,4 @@
-package com.auth0.springboot;
+package com.auth0.springboot.pusher;
 
 import com.pusher.rest.Pusher;
 import org.springframework.beans.factory.annotation.Value;
